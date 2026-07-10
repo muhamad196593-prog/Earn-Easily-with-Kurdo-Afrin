@@ -81,3 +81,29 @@ body{
     margin-bottom:12px;
     display:block;
 }
+.menu{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:20px;
+}
+
+.menu-item{
+    background:#0b6b3a;
+    color:#fff;
+    border-radius:18px;
+    padding:20px;
+    text-align:center;
+    font-size:18px;
+}
+
+.menu-item i{
+    font-size:40px;
+    color:#ffd54f;
+    margin-bottom:10px;
+}
+
+.menu-item p{
+    margin:0;
+    font-weight:bold;
+}
