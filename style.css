@@ -13,7 +13,9 @@ overflow-x:hidden;
 
 .top-bg{
 height:280px;
-background:linear-gradient(180deg,#d4af37 0%,#f2d36b 100%);
+background: url("file_000000007a0c71f49d56e0565c0bba69.png") center center;
+background-size: cover;
+background-repeat: no-repeat;
 border-bottom-left-radius:40px;
 border-bottom-right-radius:40px;
 display:flex;
