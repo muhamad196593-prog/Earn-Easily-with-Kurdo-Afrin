@@ -237,3 +237,33 @@ font-size:14px;
 font-weight:bold;
 color:#1f7d42;
 }
+.stats{
+    width:90%;
+    margin:20px auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+}
+
+.card i{
+    font-size:35px;
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+.card h3{
+    margin:10px 0;
+    color:#0b5d33;
+}
+
+.card p{
+    margin:0;
+    color:#555;
+}
