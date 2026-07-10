@@ -193,3 +193,14 @@ transform:translateY(0);
 }
 
 }
+.toggle-password{
+cursor:pointer;
+color:#888;
+font-size:20px;
+margin-right:10px;
+transition:.3s;
+}
+
+.toggle-password:hover{
+color:#1f7d42;
+}
