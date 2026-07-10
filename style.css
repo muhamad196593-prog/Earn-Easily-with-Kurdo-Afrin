@@ -262,7 +262,12 @@ color:#1f7d42;
     margin:10px 0;
     color:#0b5d33;
 }
-
+.logo-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 50%;
+}
 .card p{
     margin:0;
     color:#555;
