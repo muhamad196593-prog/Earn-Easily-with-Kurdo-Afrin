@@ -107,3 +107,27 @@ body{
     margin:0;
     font-weight:bold;
 }
+.withdraw{
+    background:#ffffff;
+    margin-top:20px;
+    border-radius:20px;
+    padding:20px;
+}
+
+.withdraw h3{
+    color:#0b6b3a;
+    margin-bottom:15px;
+}
+
+.withdraw-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+    border-bottom:1px solid #e5e5e5;
+    font-size:18px;
+}
+
+.withdraw-item:last-child{
+    border-bottom:none;
+}
