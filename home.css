@@ -1,0 +1,60 @@
+body{
+    margin:0;
+    font-family:Tahoma,sans-serif;
+    background:#0b5d33;
+}
+
+.header{
+    background:linear-gradient(180deg,#d8b23a,#c99f1e);
+    color:white;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo h2{
+    margin:0;
+    font-size:32px;
+}
+
+.logo p{
+    margin:0;
+    font-size:18px;
+}
+
+.profile i{
+    font-size:28px;
+    margin-left:15px;
+    color:#fff;
+}
+
+.balance{
+    width:90%;
+    margin:20px auto;
+    background:#0f6b3a;
+    color:white;
+    border-radius:25px;
+    padding:25px;
+    box-shadow:0 10px 20px rgba(0,0,0,.3);
+}
+
+.balance h3{
+    margin:0;
+    font-size:22px;
+}
+
+.balance h1{
+    font-size:48px;
+    margin:15px 0;
+}
+
+.balance button{
+    background:#fff;
+    color:#0f6b3a;
+    border:none;
+    padding:12px 25px;
+    border-radius:30px;
+    font-size:18px;
+    cursor:pointer;
+}
