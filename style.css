@@ -204,3 +204,36 @@ transition:.3s;
 .toggle-password:hover{
 color:#1f7d42;
 }
+.features{
+margin-top:30px;
+display:flex;
+justify-content:space-between;
+gap:10px;
+}
+
+.feature{
+flex:1;
+background:#f8f8f8;
+border-radius:15px;
+padding:15px 10px;
+text-align:center;
+transition:.3s;
+}
+
+.feature:hover{
+transform:translateY(-5px);
+box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+.feature i{
+font-size:26px;
+color:#d4af37;
+margin-bottom:8px;
+display:block;
+}
+
+.feature span{
+font-size:14px;
+font-weight:bold;
+color:#1f7d42;
+}
