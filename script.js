@@ -1,46 +1,51 @@
+import { auth } from "./firebase.js";
+import {
+  signInWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+
 const loginBtn = document.getElementById("loginBtn");
 const registerBtn = document.getElementById("registerBtn");
 
 loginBtn.addEventListener("click", () => {
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
 
-    if (!email || !password) {
-        alert("يرجى إدخال البريد الإلكتروني وكلمة المرور.");
-        return;
-    }
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
 
-    alert("تم الضغط على زر تسجيل الدخول");
-    // لاحقًا سنربطه بـ Firebase
+  if (!email || !password) {
+    alert("يرجى إدخال البريد الإلكتروني وكلمة المرور.");
+    return;
+  }
+
+  signInWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      alert("تم تسجيل الدخول بنجاح");
+      window.location.href = "home.html";
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
+
 });
 
 registerBtn.addEventListener("click", () => {
-    alert("سيتم فتح صفحة إنشاء الحساب");
-    // لاحقًا:
-    // window.location.href = "register.html";
+  window.location.href = "register.html";
 });
-function togglePassword(){
 
-const password =
-document.getElementById("password");
+function togglePassword() {
 
-const icon =
-document.querySelector(".toggle-password");
+  const password = document.getElementById("password");
+  const icon = document.querySelector(".toggle-password");
 
-if(password.type==="password"){
-
-password.type="text";
-
-icon.classList.remove("fa-eye");
-icon.classList.add("fa-eye-slash");
-
-}else{
-
-password.type="password";
-
-icon.classList.remove("fa-eye-slash");
-icon.classList.add("fa-eye");
+  if (password.type === "password") {
+    password.type = "text";
+    icon.classList.remove("fa-eye");
+    icon.classList.add("fa-eye-slash");
+  } else {
+    password.type = "password";
+    icon.classList.remove("fa-eye-slash");
+    icon.classList.add("fa-eye");
+  }
 
 }
 
-}
+window.togglePassword = togglePassword;
