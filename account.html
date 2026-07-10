@@ -3,42 +3,115 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>الحساب</title>
 
 <link rel="stylesheet" href="home.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
 
 <body>
 
-<h2 style="text-align:center;margin-top:30px;">الحساب</h2>
+<section class="account-page">
 
-<div style="text-align:center;margin-top:20px;">
-    <img src="images/avatar.png" style="width:90px;height:90px;border-radius:50%;border:4px solid #d4af37;">
-    <h3>اسم المستخدم</h3>
-    <p>user@example.com</p>
+<div class="profile-card">
+
+<div class="profile-top">
+
+<img src="images/avatar.png" class="avatar">
+
+<div class="profile-info">
+<h2>اسم المستخدم</h2>
+<p>user@example.com</p>
 </div>
 
-<div style="background:#15803d;color:white;border-radius:20px;padding:20px;margin:20px;">
-    <p>🆔 ID: 100001</p>
-    <p>📅 تاريخ التسجيل: 2026</p>
-    <p>⭐ المستوى: عضو عادي</p>
+<div class="member-badge">
+<i class="fas fa-star"></i>
+عضو عادي
 </div>
 
-<div style="margin:20px;">
-    <button style="width:100%;padding:15px;margin-bottom:10px;">👤 تعديل الملف الشخصي</button>
-    <button style="width:100%;padding:15px;margin-bottom:10px;">🔒 تغيير كلمة المرور</button>
-    <button style="width:100%;padding:15px;margin-bottom:10px;">🌐 تغيير اللغة</button>
-    <button style="width:100%;padding:15px;margin-bottom:10px;">🔔 الإشعارات</button>
-    <button style="width:100%;padding:15px;margin-bottom:10px;">❓ المساعدة</button>
-    <button style="width:100%;padding:15px;background:red;color:white;">🚪 تسجيل الخروج</button>
 </div>
+
+<div class="profile-stats">
+
+<div>
+<i class="fas fa-id-card"></i>
+<p>معرف المستخدم</p>
+<h3>100001</h3>
+</div>
+
+<div>
+<i class="fas fa-calendar"></i>
+<p>تاريخ التسجيل</p>
+<h3>10 يوليو 2026</h3>
+</div>
+
+<div>
+<i class="fas fa-shield-alt"></i>
+<p>المستوى</p>
+<h3>عضو عادي</h3>
+</div>
+
+</div>
+
+</div>
+
+<div class="settings-box">
+
+<a href="#">
+<i class="fas fa-user"></i>
+<span>تعديل الملف الشخصي</span>
+<i class="fas fa-chevron-left"></i>
+</a>
+
+<a href="#">
+<i class="fas fa-lock"></i>
+<span>تغيير كلمة المرور</span>
+<i class="fas fa-chevron-left"></i>
+</a>
+
+<a href="#">
+<i class="fas fa-globe"></i>
+<span>تغيير اللغة</span>
+<i class="fas fa-chevron-left"></i>
+</a>
+
+<a href="#">
+<i class="fas fa-bell"></i>
+<span>الإشعارات</span>
+<i class="fas fa-chevron-left"></i>
+</a>
+
+<a href="#">
+<i class="fas fa-circle-question"></i>
+<span>مركز المساعدة</span>
+<i class="fas fa-chevron-left"></i>
+</a>
+
+<a href="#">
+<i class="fas fa-headset"></i>
+<span>تواصل معنا</span>
+<i class="fas fa-chevron-left"></i>
+</a>
+
+</div>
+
+<button class="logout-btn">
+<i class="fas fa-right-from-bracket"></i>
+تسجيل الخروج
+</button>
 
 <nav class="bottom-nav">
 
 <a href="home.html">
 <i class="fas fa-house"></i>
 <span>الرئيسية</span>
+</a>
+
+<a href="earn.html">
+<i class="fas fa-chart-line"></i>
+<span>الأرباح</span>
 </a>
 
 <a href="tasks.html">
@@ -57,6 +130,8 @@
 </a>
 
 </nav>
+
+</section>
 
 </body>
 </html>
