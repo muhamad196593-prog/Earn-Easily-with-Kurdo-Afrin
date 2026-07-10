@@ -267,3 +267,30 @@ color:#1f7d42;
     margin:0;
     color:#555;
 }
+.menu{
+    width:90%;
+    margin:20px auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.menu-item{
+    background:#0f6b3a;
+    color:white;
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    cursor:pointer;
+}
+
+.menu-item i{
+    font-size:40px;
+    color:#f3c63f;
+    margin-bottom:10px;
+}
+
+.menu-item p{
+    margin:0;
+    font-size:20px;
+}
