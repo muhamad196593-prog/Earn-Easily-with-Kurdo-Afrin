@@ -312,13 +312,20 @@ color:#1f7d42;
     z-index:100;
 }
 .tasks-card{
-    background:#11853e;
-    border-radius:30px;
-    margin:20px;
-    padding:25px;
-    color:#fff;
-    position:relative;
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 25px;
+    background:#ffffff;
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    border-bottom-left-radius:35px;
+    border-bottom-right-radius:35px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.12);
+}
 }
 
 .wallet-circle{
