@@ -386,3 +386,54 @@ color:#1f7d42;
     font-size:22px;
     font-weight:bold;
 }
+.special-tasks{
+    margin:20px;
+}
+
+.special-tasks h2{
+    color:#11853e;
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.task-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#fff;
+    border-radius:20px;
+    padding:16px;
+    margin-bottom:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.task-info{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.task-icon{
+    font-size:34px;
+    color:#11853e;
+}
+
+.task-info h3{
+    margin:0;
+    font-size:18px;
+}
+
+.task-info p{
+    margin:5px 0 0;
+    color:#666;
+}
+
+.task-btn{
+    background:#11853e;
+    color:#fff;
+    border:none;
+    border-radius:12px;
+    padding:10px 22px;
+    font-size:16px;
+    cursor:pointer;
+}
