@@ -437,3 +437,34 @@ color:#1f7d42;
     font-size:16px;
     cursor:pointer;
 }
+.summary-cards{
+    display:flex;
+    gap:15px;
+    margin:20px;
+}
+
+.summary-card{
+    flex:1;
+    background:#fff;
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.summary-card i{
+    font-size:36px;
+    color:#11853e;
+    margin-bottom:10px;
+}
+
+.summary-card h3{
+    font-size:16px;
+    margin:10px 0;
+}
+
+.summary-card span{
+    font-size:24px;
+    font-weight:bold;
+    color:#11853e;
+}
