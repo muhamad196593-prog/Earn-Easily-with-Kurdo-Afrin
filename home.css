@@ -299,7 +299,7 @@ body{
 }
 
 .balance-card{
-    margin-top: -20px;
+    margin-top: 15px;
     position: relative;
     z-index: 20;
 }
