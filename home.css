@@ -284,3 +284,22 @@ font-size:18px;
 font-weight:bold;
 cursor:pointer;
 }
+.top-header{
+    position: relative;
+    background: #fff;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    z-index: 10;
+}
+
+body{
+    background: #f5f6f8;
+}
+
+.balance-card{
+    margin-top: -20px;
+    position: relative;
+    z-index: 20;
+}
