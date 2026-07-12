@@ -40,18 +40,15 @@ createAccountBtn.addEventListener("click", () => {
             alert(error.message);
         });
 });
-
 const googleLoginBtn = document.getElementById("googleLoginBtn");
 
-const provider = new GoogleAuthProvider();
+console.log(loginBtn);
+console.log(googleLoginBtn);
 
-googleLoginBtn.addEventListener("click", () => {
-  signInWithPopup(auth, provider)
-    .then(() => {
-      alert("تم تسجيل الدخول باستخدام Google");
-      window.location.href = "home.html";
-    })
-    .catch((error) => {
-      alert(error.message);
-    });
-});
+loginBtn.onclick = () => {
+    alert("تم الضغط على تسجيل الدخول");
+};
+
+googleLoginBtn.onclick = () => {
+    alert("تم الضغط على Google");
+};
