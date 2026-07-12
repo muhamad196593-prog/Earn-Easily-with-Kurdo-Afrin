@@ -4,6 +4,8 @@ import {
   signOut
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
+alert("تم تحميل account.js");
+
 onAuthStateChanged(auth, (user) => {
   if (user) {
     const userName = document.getElementById("userName");
