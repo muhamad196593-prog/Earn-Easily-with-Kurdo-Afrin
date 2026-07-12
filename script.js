@@ -21,7 +21,6 @@ function showLogin() {
 }
 window.showLogin = showLogin;
 
-
 const createAccountBtn = document.getElementById("createAccountBtn");
 
 createAccountBtn.addEventListener("click", () => {
