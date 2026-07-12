@@ -303,3 +303,74 @@ body{
     position: relative;
     z-index: 20;
 }
+/* ===== شركات العروض ===== */
+
+.offers-section{
+    width:92%;
+    margin:20px auto;
+}
+
+.offers-section h2{
+    color:#0b7a43;
+    margin-bottom:15px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.offer-card{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    background:#fff;
+    padding:15px;
+    margin-bottom:15px;
+    border-radius:18px;
+    text-decoration:none;
+    color:#222;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.offer-card:hover{
+    transform:translateY(-2px);
+}
+
+.offer-card img{
+    width:55px;
+    height:55px;
+    border-radius:12px;
+    object-fit:contain;
+    background:#f5f5f5;
+    padding:5px;
+}
+
+.offer-card h3{
+    margin:0;
+    color:#0b7a43;
+    font-size:18px;
+}
+
+.offer-card p{
+    margin-top:5px;
+    color:#666;
+    font-size:14px;
+}
+.offer-card div{
+    flex:1;
+}
+
+.offer-card h3{
+    margin:0;
+    color:#0b7a43;
+    font-size:18px;
+}
+
+.offer-card p{
+    margin-top:5px;
+    color:#666;
+    font-size:14px;
+}
+
+.offer-card:hover{
+    background:#f4fff7;
+}
