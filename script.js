@@ -4,14 +4,16 @@ import {
 signInWithPopup. GoogleAuthProvider
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword
-} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+} from 
+  "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
 alert("script.js يعمل");
 
 const loginBtn = document.getElementById("loginBtn");
 const registerBtn = document.getElementById("registerBtn");
 
-
+const loginCard = document.querySelector(".login-card");
+const registerForm = document.getElementById("registerForm");
 
 function showLogin() {
     registerForm.style.display = "none";
