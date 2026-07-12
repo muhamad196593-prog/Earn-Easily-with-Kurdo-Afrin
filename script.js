@@ -1,6 +1,8 @@
 import { auth } from "./firebase.js";
+
 import {
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
 const loginBtn = document.getElementById("loginBtn");
@@ -61,7 +63,6 @@ function showLogin() {
 }
 window.showLogin = showLogin;
 
-import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
 const createAccountBtn = document.getElementById("createAccountBtn");
 
