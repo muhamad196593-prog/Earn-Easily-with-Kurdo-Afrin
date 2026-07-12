@@ -9,10 +9,12 @@ signInWithPopup. GoogleAuthProvider
 
 alert("script.js يعمل");
 
-const loginBtn = document.getElementById("loginBtn");
-const registerBtn = document.getElementById("registerBtn");
-loginBtn.addEventListener("click", () => {
-    alert("تم الضغط على تسجيل الدخول");
+document.addEventListener("DOMContentLoaded", () => {
+    const loginBtn = document.getElementById("loginBtn");
+
+    loginBtn.addEventListener("click", () => {
+        alert("الزر شغال");
+    });
 });
 const loginCard = document.querySelector(".login-card");
 const registerForm = document.getElementById("registerForm");
