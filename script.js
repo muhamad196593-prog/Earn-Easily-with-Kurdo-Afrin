@@ -6,6 +6,8 @@ signInWithPopup. GoogleAuthProvider
   createUserWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
+const registerBtn = document.getElementById("registerBtn");
+
 alert("script.js يعمل");
 
 const loginBtn = document.getElementById("loginBtn");
