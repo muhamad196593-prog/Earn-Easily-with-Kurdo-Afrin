@@ -1,53 +1,376 @@
-<!DOCTYPE html>  <html lang="ar" dir="rtl">  <head>  
-<meta charset="UTF-8">  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<title>Kurdo Rewards</title>  <link rel="stylesheet" href="home.css">  <link rel="stylesheet"  
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">  </head>  <body>  
-<header class="top-header">  
-    <i class="fas fa-bell"></i>  <h1 style="color:#000;">الرئيسية</h1>  
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-<i class="fas fa-bars" style="color:#000;"></i>
+body{
+font-family:Tahoma,sans-serif;
+background:#f5f6f8;
+direction:rtl;
+padding-bottom:90px;
+}
 
-</header>  
-<section class="balance-card">  <div class="balance-text">  
-<p>الرصيد الحالي</p>  
-<h2>$0.00</h2>  <button>  
-<i class="fas fa-wallet"></i>  
-عرض المحفظة  
-</button>  </div>  <div class="balance-image">  
-<img src="images/wallet.png">  
-</div>  <nav class="bottom-nav">  <a href="#" class="active">  
-<i class="fas fa-house"></i>  
-<span>الرئيسية</span>  
-</a>  <a href="home.html">  
-<i class="fas fa-chart-line"></i>  
-<span>الأرباح</span>  
-</a>  <a href="withdraw.html">  
-<i class="fas fa-wallet"></i>  
-<span>السحب</span>  
-</a>  <a href="account.html">  
-<i class="fas fa-user"></i>  
-<span>الحساب</span>  
-</a>  </nav>  
-    <section class="offers-section">  <h2>شركات العروض</h2>  <a href="freecash.html" class="offer-card">  
-    <img src="images/freecash.png" alt="Freecash">  
-    <div>  
-        <h3>Freecash</h3>  
-        <p>العب ألعاب واربح أموال حقيقية</p>  
-    </div>  
-</a>  <a href="lootup.html" class="offer-card">  
-    <img src="images/lootup.png" alt="Lootup">  
-    <div>  
-        <h3>Lootup</h3>  
-        <p>أكمل العروض والمهام</p>  
-    </div>  
-</a>  <a href="ysense.html" class="offer-card">  
-    <img src="images/ysense.png" alt="ySense">  
-    <div>  
-        <h3>ySense</h3>  
-        <p>ألعاب واستبيانات مدفوعة</p>  
-    </div>  
-</a>  </section>
+.top-header{
+background: #ffffff;
+color:#000;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom-left-radius:25px;
+border-bottom-right-radius:25px;
+height: 70px;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
 
-<script src="home.js"></script>  </body>  
-</html>
+.logo h1{
+font-size:30px;
+}
+
+.logo p{
+font-size:14px;
+letter-spacing:3px;
+}
+
+.header-icons{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.header-icons i{
+font-size:22px;
+}
+
+.avatar{
+width:45px;
+height:45px;
+border-radius:50%;
+border:2px solid white;
+}
+
+.balance-card{
+width:92%;
+margin:20px auto;
+background:#0b7a43;
+color:#fff;
+border-radius:25px;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.balance-text h2{
+font-size:36px;
+margin:10px 0;
+}
+
+.balance-text button{
+background:#fff;
+color:#0b7a43;
+border:none;
+border-radius:30px;
+padding:10px 20px;
+font-weight:bold;
+}
+
+.balance-image img{
+width:100px;
+}
+.stats{
+width:92%;
+margin:20px auto;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.stat-card{
+background:#fff;
+border-radius:20px;
+padding:18px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.stat-card i{
+font-size:30px;
+color:#d4af37;
+margin-bottom:10px;
+}
+
+.stat-card h3{
+color:#0b7a43;
+margin-bottom:5px;
+}
+
+.services{
+width:92%;
+margin:20px auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+}
+
+.service{
+background:#0b7a43;
+color:#fff;
+border-radius:18px;
+padding:18px;
+text-align:center;
+}
+
+.service i{
+font-size:32px;
+color:#f7c948;
+margin-bottom:10px;
+display:block;
+}
+
+.withdraw-section{
+width:92%;
+margin:20px auto;
+background:#fff;
+border-radius:20px;
+padding:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.withdraw-section h2{
+margin-bottom:15px;
+color:#0b7a43;
+}
+
+.withdraw-card{
+display:flex;
+align-items:center;
+gap:12px;
+padding:14px 0;
+border-bottom:1px solid #eee;
+}
+
+.withdraw-card:last-child{
+border-bottom:none;
+}
+
+.withdraw-card i{
+color:#d4af37;
+font-size:22px;
+}
+
+.bottom-nav{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:#fff;
+display:flex;
+justify-content:space-around;
+padding:12px 0;
+box-shadow:0 -5px 15px rgba(0,0,0,.1);
+}
+
+.bottom-nav a{
+text-decoration:none;
+color:#777;
+display:flex;
+flex-direction:column;
+align-items:center;
+font-size:12px;
+}
+
+.bottom-nav a i{
+font-size:22px;
+margin-bottom:5px;
+}
+.account-page{
+padding:20px;
+padding-bottom:90px;
+background:#f5f5f5;
+min-height:100vh;
+}
+
+.profile-card{
+background:#0b6b37;
+color:#fff;
+border-radius:25px;
+padding:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.profile-top{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.avatar{
+width:80px;
+height:80px;
+border-radius:50%;
+border:4px solid #d4af37;
+object-fit:cover;
+background:#fff;
+}
+
+.profile-info h2{
+margin:0;
+font-size:24px;
+}
+
+.profile-info p{
+margin-top:5px;
+color:#ddd;
+}
+
+.member-badge{
+background:rgba(255,255,255,.15);
+padding:8px 15px;
+border-radius:20px;
+}
+
+.profile-stats{
+display:flex;
+justify-content:space-between;
+margin-top:25px;
+text-align:center;
+}
+
+.profile-stats div{
+flex:1;
+}
+
+.profile-stats i{
+color:#d4af37;
+font-size:24px;
+margin-bottom:8px;
+}
+
+.settings-box{
+background:#fff;
+margin-top:20px;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.settings-box a{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px;
+text-decoration:none;
+color:#222;
+border-bottom:1px solid #eee;
+}
+
+.settings-box a:last-child{
+border-bottom:none;
+}
+
+.logout-btn{
+width:100%;
+margin-top:20px;
+padding:16px;
+border:none;
+border-radius:15px;
+background:#d62828;
+color:#fff;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+.top-header{
+position: relative;
+background: #fff;
+border-bottom-left-radius: 30px;
+border-bottom-right-radius: 30px;
+padding: 20px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+z-index: 10;
+}
+
+body{
+background: #f5f6f8;
+}
+
+.balance-card{
+margin-top: 15px;
+position: relative;
+z-index: 20;
+}
+/* ===== شركات العروض ===== */
+
+.offers-section{
+width:92%;
+margin:20px auto;
+}
+
+.offers-section h2{
+color:#0b7a43;
+margin-bottom:15px;
+font-size:22px;
+font-weight:bold;
+}
+
+.offer-card{
+display:flex;
+align-items:center;
+gap:15px;
+background:#fff;
+padding:15px;
+margin-bottom:15px;
+border-radius:18px;
+text-decoration:none;
+color:#222;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.offer-card:hover{
+transform:translateY(-2px);
+}
+
+.offer-card img{
+width:55px;
+height:55px;
+border-radius:12px;
+object-fit:contain;
+background:#f5f5f5;
+padding:5px;
+}
+
+.offer-card h3{
+margin:0;
+color:#0b7a43;
+font-size:18px;
+}
+
+.offer-card p{
+margin-top:5px;
+color:#666;
+font-size:14px;
+}
+.offer-card div{
+flex:1;
+}
+
+.offer-card h3{
+margin:0;
+color:#0b7a43;
+font-size:18px;
+}
+
+.offer-card p{
+margin-top:5px;
+color:#666;
+font-size:14px;
+}
+
+.offer-card:hover{
+background:#f4fff7;
+}
