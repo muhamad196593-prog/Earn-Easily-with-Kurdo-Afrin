@@ -11,7 +11,9 @@ alert("script.js يعمل");
 
 const loginBtn = document.getElementById("loginBtn");
 const registerBtn = document.getElementById("registerBtn");
-
+loginBtn.addEventListener("click", () => {
+    alert("تم الضغط على تسجيل الدخول");
+});
 const loginCard = document.querySelector(".login-card");
 const registerForm = document.getElementById("registerForm");
 
