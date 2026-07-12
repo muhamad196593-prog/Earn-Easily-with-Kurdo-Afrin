@@ -50,7 +50,6 @@ window.togglePassword = togglePassword;
 
 const loginCard = document.querySelector(".login-card");
 const registerForm = document.getElementById("registerForm");
-const registerBtn = document.getElementById("registerBtn");
 
 registerBtn.onclick = function () {
     loginCard.style.display = "none";
