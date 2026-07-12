@@ -27,10 +27,6 @@ loginBtn.addEventListener("click", () => {
 
 });
 
-registerBtn.addEventListener("click", () => {
-  window.location.href = "register.html";
-});
-
 function togglePassword() {
 
   const password = document.getElementById("password");
@@ -49,3 +45,18 @@ function togglePassword() {
 }
 
 window.togglePassword = togglePassword;
+
+const loginCard = document.querySelector(".login-card");
+const registerForm = document.getElementById("registerForm");
+const registerBtn = document.getElementById("registerBtn");
+
+registerBtn.onclick = function () {
+    loginCard.style.display = "none";
+    registerForm.style.display = "block";
+};
+
+function showLogin() {
+    registerForm.style.display = "none";
+    loginCard.style.display = "block";
+}
+window.showLogin = showLogin;
