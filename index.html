@@ -95,11 +95,18 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     <button id="registerBtn" class="register-btn">
         إنشاء حساب جديد
     </button>
-
-    <a href="register.html" class="register-btn">إنشاء حساب جديد</a>
-
 </div>
+<div id="registerForm" style="display:none;">
+    <h2>إنشاء حساب</h2>
 
+    <input type="email" id="registerEmail" placeholder="البريد الإلكتروني">
+
+    <input type="password" id="registerPassword" placeholder="كلمة المرور">
+
+    <button id="createAccountBtn">إنشاء الحساب</button>
+
+    <a href="#" onclick="showLogin()">لديك حساب؟ تسجيل الدخول</a>
+</div>
 <script type="module" src="script.js"></script>
 
 </body>
