@@ -11,8 +11,6 @@ body{
     padding-bottom:90px;
 }
 
-/* ===== الهيدر ===== */
-
 .top-header{
     position:relative;
     background:#fff;
@@ -28,7 +26,6 @@ body{
     z-index:10;
 }
 
-/* ===== بطاقة الرصيد ===== */
 
 .balance-card{
     width:92%;
@@ -64,7 +61,6 @@ body{
     height:auto;
 }
 
-/* ===== شركات العروض ===== */
 
 .offers-section{
     width:92%;
@@ -153,7 +149,6 @@ body{
     margin-bottom:5px;
 }
 
-/* ===== صفحة الحساب ===== */
 
 .account-page{
     padding:20px;
