@@ -78,22 +78,3 @@ createAccountBtn.addEventListener("click", () => {
             alert(error.message);
         });
 });
-import {
-  createUserWithEmailAndPassword
-} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
-
-const createAccountBtn = document.getElementById("createAccountBtn");
-
-createAccountBtn.addEventListener("click", () => {
-    const email = document.getElementById("registerEmail").value.trim();
-    const password = document.getElementById("registerPassword").value.trim();
-
-    createUserWithEmailAndPassword(auth, email, password)
-    .then(() => {
-        alert("تم إنشاء الحساب بنجاح");
-        showLogin();
-    })
-    .catch((error) => {
-        alert(error.message);
-    });
-});
