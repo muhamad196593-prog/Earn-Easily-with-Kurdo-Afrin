@@ -1,6 +1,7 @@
 import { auth } from "./firebase.js";
 
 import {
+signInWithPopup. GoogleAuthProvider
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
@@ -79,4 +80,19 @@ createAccountBtn.addEventListener("click", () => {
         .catch((error) => {
             alert(error.message);
         });
+});
+
+const googleLoginBtn = document.getElementById("googleLoginBtn");
+
+const provider = new GoogleAuthProvider();
+
+googleLoginBtn.addEventListener("click", () => {
+  signInWithPopup(auth, provider)
+    .then(() => {
+      alert("تم تسجيل الدخول باستخدام Google");
+      window.location.href = "home.html";
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
 });
