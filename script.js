@@ -38,12 +38,9 @@ createAccountBtn.addEventListener("click", () => {
         })
         .catch((error) => {
             alert(error.message);
-        });
-});
+        })
+      ;const loginBtn = document.getElementById("loginBtn");
 const googleLoginBtn = document.getElementById("googleLoginBtn");
-
-console.log(loginBtn);
-console.log(googleLoginBtn);
 
 loginBtn.onclick = () => {
     alert("تم الضغط على تسجيل الدخول");
