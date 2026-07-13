@@ -73,21 +73,3 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
         });
     }
-
-    // تسجيل الدخول بجوجل
-    const googleLoginBtn = document.getElementById("googleLoginBtn");
-    const provider = new GoogleAuthProvider();
-
-    if (googleLoginBtn) {
-        googleLoginBtn.addEventListener("click", async () => {
-            try {
-                await signInWithRedirect(auth, provider);
-            } catch (error) {
-                alert(error.message);
-            }
-        });
-    } else {
-        console.log("googleLoginBtn غير موجود");
-    }
-
-});
