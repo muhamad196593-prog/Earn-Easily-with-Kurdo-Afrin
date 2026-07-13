@@ -1,15 +1,18 @@
 import { auth } from "./firebase.js";
 
 import {
-signInWithPopup. GoogleAuthProvider
+  signInWithPopup,
+  GoogleAuthProvider,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword
-} from 
-  "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+
+alert("بدأ تحميل script.js");
+
+// ثم بقية الكود...
+document.addEventListener("DOMContentLoaded", () => {
 
 alert("script.js يعمل");
-
-document.addEventListener("DOMContentLoaded", () => {
     const loginBtn = document.getElementById("loginBtn");
 
     loginBtn.addEventListener("click", () => {
@@ -40,3 +43,16 @@ createAccountBtn.addEventListener("click", () => {
             alert(error.message);
         })
 const googleLoginBtn = document.getElementById("googleLoginBtn");
+const provider = new GoogleAuthProvider();
+
+googleLoginBtn.addEventListener("click", () => {
+    signInWithPopup(auth, provider)
+        .then(() => {
+            alert("تم تسجيل الدخول باستخدام Google");
+            window.location.href = "home.html";
+        })
+        .catch((error) => {
+            alert(error.message);
+        });
+});
+});
