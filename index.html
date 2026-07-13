@@ -35,10 +35,12 @@
 
     <div class="input-box">
         <i class="fa-solid fa-envelope"></i>
+
         <input
             type="email"
             id="email"
-            placeholder="البريد الإلكتروني">
+            placeholder="البريد الإلكتروني"
+            autocomplete="email">
     </div>
 
     <div class="input-box">
@@ -47,12 +49,11 @@
         <input
             type="password"
             id="password"
-            placeholder="كلمة المرور">
+            placeholder="كلمة المرور"
+            autocomplete="current-password">
 
-        <i
-            class="fa-solid fa-eye toggle-password"
-            onclick="togglePassword()">
-        </i>
+        <i class="fa-solid fa-eye toggle-password"
+           onclick="togglePassword()"></i>
     </div>
 
     <div class="options">
@@ -94,14 +95,41 @@
 <div id="registerForm" style="display:none;">
     <h2>إنشاء حساب</h2>
 
-    <input type="email" id="registerEmail" placeholder="البريد الإلكتروني">
+    <input
+        type="email"
+        id="registerEmail"
+        placeholder="البريد الإلكتروني">
 
-    <input type="password" id="registerPassword" placeholder="كلمة المرور">
+    <input
+        type="password"
+        id="registerPassword"
+        placeholder="كلمة المرور">
 
-    <button id="createAccountBtn">إنشاء الحساب</button>
+    <button id="createAccountBtn">
+        إنشاء الحساب
+    </button>
 
-    <a href="#" onclick="showLogin()">لديك حساب؟ تسجيل الدخول</a>
+    <a href="#" onclick="showLogin(); return false;">
+        لديك حساب؟ تسجيل الدخول
+    </a>
 </div>
+
+<script>
+function togglePassword() {
+    const password = document.getElementById("password");
+    const icon = document.querySelector(".toggle-password");
+
+    if (password.type === "password") {
+        password.type = "text";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+    } else {
+        password.type = "password";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+    }
+}
+</script>
 
 <script type="module" src="script.js"></script>
 
