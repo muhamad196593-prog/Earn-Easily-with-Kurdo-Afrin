@@ -9,55 +9,68 @@ import {
 
 alert("بدأ تحميل script.js");
 
-// ثم بقية الكود...
 document.addEventListener("DOMContentLoaded", () => {
 
-alert("script.js يعمل");
+    alert("script.js يعمل");
+
+    // تسجيل الدخول
     const loginBtn = document.getElementById("loginBtn");
-loginBtn.addEventListener("click", () => {
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
 
-    signInWithEmailAndPassword(auth, email, password)
-        .then(() => {
-            alert("تم تسجيل الدخول بنجاح");
-            window.location.href = "home.html";
-        })
-        .catch((error) => {
-            alert(error.message);
-        });
-const loginCard = document.querySelector(".login-card");
-const registerForm = document.getElementById("registerForm");
+    loginBtn.addEventListener("click", () => {
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
 
-function showLogin() {
-    registerForm.style.display = "none";
-    loginCard.style.display = "block";
-}
-window.showLogin = showLogin;
+        signInWithEmailAndPassword(auth, email, password)
+            .then(() => {
+                alert("تم تسجيل الدخول بنجاح");
+                window.location.href = "home.html";
+            })
+            .catch((error) => {
+                alert(error.message);
+            });
+    });
 
-const createAccountBtn = document.getElementById("createAccountBtn");
+    // عناصر التسجيل
+    const loginCard = document.querySelector(".login-card");
+    const registerForm = document.getElementById("registerForm");
 
-createAccountBtn.addEventListener("click", () => {
-    const email = document.getElementById("registerEmail").value.trim();
-    const password = document.getElementById("registerPassword").value.trim();
+    function showLogin() {
+        registerForm.style.display = "none";
+        loginCard.style.display = "block";
+    }
 
-    createUserWithEmailAndPassword(auth, email, password)
-        .then(() => {
-            alert("تم إنشاء الحساب بنجاح");
-            window.location.href = "home.html";
-        })
-        .catch((error) => {
-            alert(error.message);
-        })
-const googleLoginBtn = document.getElementById("googleLoginBtn");
-const provider = new GoogleAuthProvider();
+    window.showLogin = showLogin;
 
-googleLoginBtn.addEventListener("click", () => {
-    signInWithPopup(auth, provider)
-        .then(() => {
-            alert("تم تسجيل الدخول باستخدام Google");
-            window.location.href = "home.html";
-        })
-        .catch((error) => {
-            alert(error.message);
-        });
+    // إنشاء حساب
+    const createAccountBtn = document.getElementById("createAccountBtn");
+
+    createAccountBtn.addEventListener("click", () => {
+        const email = document.getElementById("registerEmail").value.trim();
+        const password = document.getElementById("registerPassword").value.trim();
+
+        createUserWithEmailAndPassword(auth, email, password)
+            .then(() => {
+                alert("تم إنشاء الحساب بنجاح");
+                window.location.href = "home.html";
+            })
+            .catch((error) => {
+                alert(error.message);
+            });
+    });
+
+    // تسجيل الدخول بجوجل
+    const googleLoginBtn = document.getElementById("googleLoginBtn");
+    const provider = new GoogleAuthProvider();
+
+    googleLoginBtn.addEventListener("click", () => {
+        signInWithPopup(auth, provider)
+            .then(() => {
+                alert("تم تسجيل الدخول باستخدام Google");
+                window.location.href = "home.html";
+            })
+            .catch((error) => {
+                alert(error.message);
+            });
+    });
+
+});
