@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kurdo Rewards</title>
+    <title>Kurdo Rewards</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
 
 <div class="top-bg">
     <div class="overlay"></div>
 
-<div class="logo">
+    <div class="logo">
+        <img src="logo.png" alt="Kurdo Afrin" class="logo-img">
 
-<img src="logo.png" alt="Kurdo Afrin" class="logo-img">
-
-    <h1>اربح بسهولة مع كردو عفرين</h1>
-<p>منصة موثوقة للربح السهل والآمن</p>
-
+        <h1>اربح بسهولة مع كردو عفرين</h1>
+        <p>منصة موثوقة للربح السهل والآمن</p>
+    </div>
 </div>
-    
+
 <div class="login-card">
 
     <h2>مرحباً بك</h2>
@@ -37,27 +36,26 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     <div class="input-box">
         <i class="fa-solid fa-envelope"></i>
         <input
-        type="email"
-        id="email"
-        placeholder="البريد الإلكتروني">
+            type="email"
+            id="email"
+            placeholder="البريد الإلكتروني">
     </div>
 
-<div class="input-box">
-    <i class="fa-solid fa-lock"></i>
+    <div class="input-box">
+        <i class="fa-solid fa-lock"></i>
 
-    <input
-        type="password"
-        id="password"
-        placeholder="كلمة المرور">
+        <input
+            type="password"
+            id="password"
+            placeholder="كلمة المرور">
 
-    <i
-        class="fa-solid fa-eye toggle-password"
-        onclick="togglePassword()">
-    </i>
-</div>
+        <i
+            class="fa-solid fa-eye toggle-password"
+            onclick="togglePassword()">
+        </i>
+    </div>
 
     <div class="options">
-
         <label>
             <input type="checkbox">
             تذكرني
@@ -66,31 +64,33 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         <a href="#">
             نسيت كلمة المرور؟
         </a>
-
-    </div>
-<div class="features">
-
-    <div class="feature">
-        <i class="fa-solid fa-shield-halved"></i>
-        <span>آمن وموثوق</span>
     </div>
 
-    <div class="feature">
-        <i class="fa-solid fa-headset"></i>
-        <span>دعم 24/7</span>
+    <div class="features">
+
+        <div class="feature">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>آمن وموثوق</span>
+        </div>
+
+        <div class="feature">
+            <i class="fa-solid fa-headset"></i>
+            <span>دعم 24/7</span>
+        </div>
+
+        <div class="feature">
+            <i class="fa-solid fa-coins"></i>
+            <span>أرباح يومية</span>
+        </div>
+
     </div>
 
-    <div class="feature">
-        <i class="fa-solid fa-coins"></i>
-        <span>أرباح يومية</span>
-    </div>
-
-</div>
     <button id="loginBtn" class="login-btn">
         تسجيل الدخول
     </button>
+
 </div>
-    
+
 <div id="registerForm" style="display:none;">
     <h2>إنشاء حساب</h2>
 
@@ -102,6 +102,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
     <a href="#" onclick="showLogin()">لديك حساب؟ تسجيل الدخول</a>
 </div>
+
 <script type="module" src="script.js"></script>
+
 </body>
 </html>
