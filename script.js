@@ -14,11 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 alert("script.js يعمل");
     const loginBtn = document.getElementById("loginBtn");
+loginBtn.addEventListener("click", () => {
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
 
-    loginBtn.addEventListener("click", () => {
-        alert("الزر شغال");
-    });
-});
+    signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+            alert("تم تسجيل الدخول بنجاح");
+            window.location.href = "home.html";
+        })
+        .catch((error) => {
+            alert(error.message);
+        });
 const loginCard = document.querySelector(".login-card");
 const registerForm = document.getElementById("registerForm");
 
@@ -54,5 +61,3 @@ googleLoginBtn.addEventListener("click", () => {
         .catch((error) => {
             alert(error.message);
         });
-});
-});
