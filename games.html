@@ -3,49 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>الألعاب - Kurdo Rewards</title>
+
+<title>الألعاب | Kurdo Rewards</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
+
 body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#0f172a;
-    color:#fff;
+margin:0;
+font-family:Arial,sans-serif;
+background:#0f172a;
+color:white;
 }
 
 header{
-    background:#2563eb;
-    padding:18px;
-    text-align:center;
-    font-size:24px;
-    font-weight:bold;
+background:#2563eb;
+padding:18px;
+text-align:center;
+font-size:24px;
+font-weight:bold;
 }
 
 .container{
-    padding:20px;
+padding:20px;
 }
 
-.game{
-    background:#1e293b;
-    margin-bottom:15px;
-    padding:15px;
-    border-radius:12px;
+.info{
+background:#1e293b;
+padding:15px;
+border-radius:15px;
+margin-bottom:20px;
+text-align:center;
 }
 
-.game h3{
-    margin:0 0 10px;
+.games{
+display:grid;
+gap:15px;
+}
+
+.card{
+background:#1e293b;
+border-radius:15px;
+padding:15px;
+text-align:center;
+}
+
+.card i{
+font-size:45px;
+color:#22c55e;
+margin-bottom:10px;
+}
+
+.card h3{
+margin:10px 0;
+}
+
+.card p{
+color:#cbd5e1;
+font-size:14px;
 }
 
 button{
-    background:#22c55e;
-    color:white;
-    border:none;
-    padding:12px 20px;
-    border-radius:10px;
-    cursor:pointer;
-    font-size:16px;
+margin-top:10px;
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+background:#22c55e;
+color:white;
+font-size:16px;
+cursor:pointer;
 }
+
 </style>
+
 </head>
 
 <body>
@@ -56,14 +88,28 @@ button{
 
 <div class="container">
 
-<div class="game">
-<h3>ألعاب واربح نقاط</h3>
+<div class="info">
+<h2>ابدأ اللعب واربح</h2>
 
 <p>
-اختر لعبة وابدأ بجمع النقاط.
+بعد قبول حساب Monlix ستظهر الألعاب هنا، وكلما أنجزت مراحل ستحصل على نقاط.
 </p>
 
-<button id="playBtn">
+</div>
+
+<div class="games">
+
+<div class="card">
+
+<i class="fas fa-gamepad"></i>
+
+<h3>الألعاب</h3>
+
+<p>
+سيتم تحميل ألعاب Monlix هنا بعد الموافقة على التطبيق.
+</p>
+
+<button onclick="alert('سيتم تفعيل الألعاب بعد موافقة Monlix.')">
 ابدأ اللعب
 </button>
 
@@ -71,13 +117,7 @@ button{
 
 </div>
 
-<script>
-document.getElementById("playBtn").onclick=function(){
-
-alert("سيتم ربط ألعاب Monlix بعد الموافقة على التطبيق.");
-
-};
-</script>
+</div>
 
 </body>
 </html>
