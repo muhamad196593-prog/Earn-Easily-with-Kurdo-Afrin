@@ -8,15 +8,16 @@ onAuthStateChanged(auth, async (user) => {
     const userRef = doc(db, "users", user.uid);
     const userSnap = await getDoc(userRef);
 
-    if (userSnap.exists()) {
-        const data = userSnap.data();
+    if (!userSnap.exists()) return;
 
-        const points = data.balance || 0;
+    const data = userSnap.data();
 
-        document.getElementById("points").innerHTML =
-            `${points} <span>نقطة</span>`;
+    // اقرأ النقاط من points، وإذا لم تكن موجودة استخدم balance
+    const points = data.points ?? data.balance ?? 0;
 
-        document.getElementById("balance").textContent =
-            `$${(points / 1000).toFixed(2)}`;
-    }
+    document.getElementById("points").innerHTML =
+        `${points} <span>نقطة</span>`;
+
+    document.getElementById("balance").textContent =
+        `$${(points / 1000).toFixed(2)}`;
 });
