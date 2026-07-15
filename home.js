@@ -14,8 +14,6 @@ auth.onAuthStateChanged(async (user) => {
     const data = userSnap.data();
 
   document.getElementById("balance").textContent = userData.points + " نقطة";
-
-    document.querySelector(".balance-text p").textContent =
-      data.points + " نقطة";
+    
   }
 });
