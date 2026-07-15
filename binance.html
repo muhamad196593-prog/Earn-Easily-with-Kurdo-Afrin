@@ -144,12 +144,43 @@ min="0.10"
 step="0.10"  
 placeholder="0.10">
 
-<div class="note">  
-⭐ الحد الأدنى للسحب:  
-100 نقطة = 0.10 دولار  
-</div>  <button id="withdrawBtn">  
-إرسال طلب السحب  
-</button>  <div class="info">  
-سيتم مراجعة طلب السحب خلال 24 - 48 ساعة.  
-</div>  </div>  </div>  <script type="module" src="binance.js"></script>  </body>  
-</html>  
+<div class="note">
+⭐ الحد الأدنى للسحب:
+<br>
+100 نقطة = 0.10 دولار
+</div>
+
+<button id="withdrawBtn">
+إرسال طلب السحب
+</button>
+
+<div class="info">
+سيتم مراجعة طلب السحب خلال 24 - 48 ساعة
+</div>
+
+</div>
+</div>
+
+<!-- نافذة النجاح -->
+<div id="popup" class="popup">
+    <div class="popup-box">
+
+        <i class="fas fa-check-circle popup-icon"></i>
+
+        <h2>تم بنجاح</h2>
+
+        <p id="popupMessage">
+            تم إرسال طلب السحب بنجاح
+        </p>
+
+        <button id="closePopup">
+            حسناً
+        </button>
+
+    </div>
+</div>
+
+<script type="module" src="binance.js"></script>
+
+</body>
+</html>
