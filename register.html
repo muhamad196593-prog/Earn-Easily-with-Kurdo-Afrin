@@ -1,27 +1,143 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>إنشاء حساب</title>
 
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+body{
+background:#f4f6fb;
+font-family:Cairo,sans-serif;
+margin:0;
+}
+
+.container{
+width:90%;
+max-width:420px;
+margin:40px auto;
+background:#fff;
+padding:30px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.logo{
+text-align:center;
+margin-bottom:20px;
+}
+
+.logo img{
+width:120px;
+}
+
+.logo h2{
+color:#18863c;
+margin:10px 0;
+}
+
+.logo p{
+color:#777;
+font-size:15px;
+}
+
+.input-box{
+position:relative;
+margin-bottom:18px;
+}
+
+.input-box i{
+position:absolute;
+right:15px;
+top:18px;
+color:#18863c;
+}
+
+.input-box input{
+width:100%;
+padding:15px 45px;
+border:1px solid #ddd;
+border-radius:12px;
+font-size:16px;
+outline:none;
+}
+
+.input-box input:focus{
+border-color:#18863c;
+}
+
+button{
+width:100%;
+padding:16px;
+background:#18863c;
+color:#fff;
+font-size:18px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-weight:bold;
+margin-top:10px;
+}
+
+button:hover{
+background:#146e31;
+}
+
+.bottom{
+text-align:center;
+margin-top:20px;
+}
+
+.bottom a{
+color:#18863c;
+font-weight:bold;
+text-decoration:none;
+}
+
+</style>
 
 </head>
+
 <body>
 
 <div class="container">
-    <h2>إنشاء حساب</h2>
 
-    <input type="email" id="email" placeholder="البريد الإلكتروني">
-    <input type="password" id="password" placeholder="كلمة المرور">
+<div class="logo">
+<img src="logo.png" alt="Logo">
+<h2>إنشاء حساب جديد</h2>
+<p>أنشئ حسابك وابدأ بجمع النقاط</p>
+</div>
 
-    <button id="createAccount">إنشاء الحساب</button>
+<div class="input-box">
+<i class="fas fa-envelope"></i>
+<input type="email" id="email" placeholder="البريد الإلكتروني">
+</div>
 
-    <p>
-        لديك حساب؟
-        <a href="index.html">تسجيل الدخول</a>
-    </p>
+<div class="input-box">
+<i class="fas fa-lock"></i>
+<input type="password" id="password" placeholder="كلمة المرور">
+</div>
+
+<div class="input-box">
+<i class="fas fa-lock"></i>
+<input type="password" id="confirmPassword" placeholder="تأكيد كلمة المرور">
+</div>
+
+<button id="createAccount">
+إنشاء الحساب
+</button>
+
+<div class="bottom">
+لديك حساب؟
+<a href="index.html">تسجيل الدخول</a>
+</div>
+
 </div>
 
 <script type="module">
@@ -30,27 +146,36 @@ import { auth, db } from "./firebase.js";
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
-document.getElementById("createAccount").addEventListener("click", () => {
+document.getElementById("createAccount").addEventListener("click", async () => {
 
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
+const email = document.getElementById("email").value.trim();
+const password = document.getElementById("password").value.trim();
+const confirmPassword = document.getElementById("confirmPassword").value.trim();
 
-    createUserWithEmailAndPassword(auth, email, password)
-    .then(async (userCredential) => {
+if(password !== confirmPassword){
+alert("كلمتا المرور غير متطابقتين");
+return;
+}
 
-        await setDoc(doc(db, "users", userCredential.user.uid), {
-            email: email,
-            points: 0,
-            balance: 0
-        });
+try{
 
-        alert("تم إنشاء الحساب بنجاح");
-        window.location.href = "home.html";
+const userCredential = await createUserWithEmailAndPassword(auth,email,password);
 
-    })
-    .catch((error) => {
-        alert(error.message);
-    });
+await setDoc(doc(db,"users",userCredential.user.uid),{
+email:email,
+points:0,
+balance:0
+});
+
+alert("تم إنشاء الحساب بنجاح");
+
+window.location.href="home.html";
+
+}catch(error){
+
+alert(error.message);
+
+}
 
 });
 
