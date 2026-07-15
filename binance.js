@@ -46,6 +46,8 @@ onAuthStateChanged(auth, (user) => {
 
       const userData = userSnap.data();
 
+      document.getElementById("balanceText").textContent =
+`${userData.balance.toFixed(2)} USD`;
       if (userData.balance < amount) {
         alert("رصيدك غير كافٍ");
         return;
