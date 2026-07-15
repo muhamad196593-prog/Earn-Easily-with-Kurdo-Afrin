@@ -13,8 +13,7 @@ auth.onAuthStateChanged(async (user) => {
   if (userSnap.exists()) {
     const data = userSnap.data();
 
-    document.querySelector(".balance-text h2").textContent =
-      data.balance.toFixed(2) + " $";
+  document.getElementById("balance").textContent = userData.points + " نقطة";
 
     document.querySelector(".balance-text p").textContent =
       data.points + " نقطة";
