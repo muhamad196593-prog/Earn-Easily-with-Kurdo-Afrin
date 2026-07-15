@@ -7,13 +7,18 @@ import {
 auth.onAuthStateChanged(async (user) => {
   if (!user) return;
 
-  const userRef = doc(db, "users", user.uid);
-  const userSnap = await getDoc(userRef);
+  try {
+    const userRef = doc(db, "users", user.uid);
+    const userSnap = await getDoc(userRef);
 
-  if (userSnap.exists()) {
-    const data = userSnap.data();
+    if (userSnap.exists()) {
+      const data = userSnap.data();
 
-  document.getElementById("balance").textContent = userData.points + " نقطة";
-    
+      document.getElementById("balance").textContent =
+        (data.points || 0) + " نقطة";
+    }
+
+  } catch (error) {
+    console.error(error);
   }
 });
