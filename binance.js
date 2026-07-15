@@ -3,7 +3,10 @@ import { auth, db } from "./firebase.js";
 import {
   collection,
   addDoc,
-  serverTimestamp
+  serverTimestamp,
+  doc,
+ getDoc,
+  updateDoc
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
 document.getElementById("withdrawBtn").addEventListener("click", async () => {
@@ -29,13 +32,38 @@ document.getElementById("withdrawBtn").addEventListener("click", async () => {
     }
 
     try {
+
+        const userRef = doc(db, "users", user.uid);
+        const userSnap = await getDoc(userRef);
+
+        if (!userSnap.exists()) {
+            alert("بيانات المستخدم غير موجودة");
+            return;
+        }
+
+        const userData = userSnap.data();
+
+        if (userData.balance < amount) {
+            alert("رصيدك غير كافٍ");
+            return;
+        }
+
+        const newBalance = userData.balance - amount;
+        const newPoints = Math.round(newBalance * 100);
+
         await addDoc(collection(db, "withdrawRequests"), {
             userEmail: user.email,
+            userId: user.uid,
             binanceUID: uid,
             amount: amount,
             method: "Binance",
             status: "Pending",
             createdAt: serverTimestamp()
+        });
+
+        await updateDoc(userRef, {
+            balance: newBalance,
+            points: newPoints
         });
 
         alert("تم إرسال طلب السحب بنجاح");
