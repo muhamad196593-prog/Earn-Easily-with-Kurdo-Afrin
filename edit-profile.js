@@ -1,45 +1,63 @@
 import { auth, db } from "./firebase.js";
 
-import { onAuthStateChanged, updateProfile } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+import {
+  onAuthStateChanged,
+  updateProfile
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
-import { doc, updateDoc } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+import {
+  doc,
+  setDoc
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
 const username = document.getElementById("username");
 const email = document.getElementById("email");
 const saveBtn = document.querySelector(".save-btn");
 
+let currentUser = null;
+
 onAuthStateChanged(auth, (user) => {
 
-    if (!user) {
-        window.location.href = "login.html";
-        return;
-    }
+  if (!user) {
+    window.location.href = "index.html";
+    return;
+  }
 
-    email.value = user.email;
-    username.value = user.displayName || "";
+  currentUser = user;
 
-    saveBtn.onclick = async () => {
+  username.value = user.displayName || "";
+  email.value = user.email;
 
-        try {
+});
 
-            await updateProfile(user, {
-                displayName: username.value
-            });
+saveBtn.addEventListener("click", async () => {
 
-            await updateDoc(doc(db, "users", user.uid), {
-                username: username.value
-            });
+  if (!currentUser) return;
 
-            alert("تم حفظ التعديلات بنجاح");
+  try {
 
-            window.location.href = "account.html";
+    await updateProfile(currentUser, {
+      displayName: username.value.trim()
+    });
 
-        } catch (error) {
+    await setDoc(
+      doc(db, "users", currentUser.uid),
+      {
+        username: username.value.trim(),
+        email: currentUser.email
+      },
+      { merge: true }
+    );
 
-            alert(error.message);
+    alert("تم حفظ التعديلات بنجاح");
 
-        }
+    window.location.href = "account.html";
 
-    };
+  } catch (error) {
+
+    console.error(error);
+    alert("حدث خطأ: " + error.message);
+
+  }
 
 });
