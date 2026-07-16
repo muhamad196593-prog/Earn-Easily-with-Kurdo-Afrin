@@ -10,8 +10,6 @@ import {
   setDoc
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
-alert("تم تحميل edit-profile.js");
-
 const username = document.getElementById("username");
 const email = document.getElementById("email");
 const saveBtn = document.querySelector(".save-btn");
@@ -21,7 +19,7 @@ let currentUser = null;
 onAuthStateChanged(auth, (user) => {
 
   if (!user) {
-    alert("لم يتم تسجيل الدخول");
+    alert("يرجى تسجيل الدخول أولاً");
     window.location.href = "index.html";
     return;
   }
@@ -33,45 +31,51 @@ onAuthStateChanged(auth, (user) => {
 
 });
 
-if (saveBtn) {
+saveBtn.addEventListener("click", async () => {
 
-  saveBtn.addEventListener("click", async () => {
+  if (!currentUser) {
+    alert("لم يتم تحميل بيانات المستخدم");
+    return;
+  }
 
-    if (!currentUser) {
-      alert("لم يتم تحميل بيانات المستخدم");
-      return;
-    }
+  const newName = username.value.trim();
 
-    try {
+  if (newName === "") {
+    alert("يرجى إدخال اسم المستخدم");
+    return;
+  }
 
-      await updateProfile(currentUser, {
-        displayName: username.value.trim()
-      });
+  try {
 
-      await setDoc(
-        doc(db, "users", currentUser.uid),
-        {
-          username: username.value.trim(),
-          email: currentUser.email
-        },
-        { merge: true }
-      );
+    // تحديث الاسم في Firebase Authentication
+    await updateProfile(currentUser, {
+      displayName: newName
+    });
 
-      alert("تم حفظ التعديلات بنجاح");
+    // حفظ البيانات في Firestore
+    await setDoc(
+      doc(db, "users", currentUser.uid),
+      {
+        username: newName,
+        email: currentUser.email
+      },
+      { merge: true }
+    );
 
-      window.location.href = "account.html";
+    alert("✅ تم حفظ التعديلات بنجاح");
 
-    } catch (error) {
+    window.location.href = "account.html";
 
-      console.error(error);
-      alert("خطأ:\n" + error.message);
+  } catch (error) {
 
-    }
+    console.error(error);
 
-  });
+    alert(
+      "حدث خطأ أثناء الحفظ\n\n" +
+      "Code: " + error.code + "\n\n" +
+      "Message: " + error.message
+    );
 
-} else {
+  }
 
-  alert("زر الحفظ غير موجود");
-
-}
+});
