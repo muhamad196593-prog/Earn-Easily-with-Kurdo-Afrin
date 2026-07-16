@@ -1,29 +1,139 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>تعديل الملف الشخصي</title>
-<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+body{
+background:#f5f5f5;
+font-family:Cairo,sans-serif;
+}
+
+.edit-card{
+max-width:450px;
+margin:30px auto;
+background:#fff;
+border-radius:20px;
+padding:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.edit-card h2{
+text-align:center;
+color:#176b2d;
+margin-bottom:25px;
+}
+
+.avatar-box{
+text-align:center;
+margin-bottom:20px;
+}
+
+.avatar-box img{
+width:120px;
+height:120px;
+border-radius:50%;
+border:4px solid #176b2d;
+object-fit:cover;
+}
+
+.avatar-box input{
+margin-top:15px;
+}
+
+label{
+display:block;
+margin-bottom:8px;
+font-weight:bold;
+}
+
+input{
+width:100%;
+padding:14px;
+border:1px solid #ddd;
+border-radius:12px;
+margin-bottom:18px;
+font-size:16px;
+}
+
+.save-btn{
+width:100%;
+padding:15px;
+border:none;
+border-radius:12px;
+background:#176b2d;
+color:#fff;
+font-size:18px;
+cursor:pointer;
+}
+
+.back-btn{
+display:block;
+text-align:center;
+margin-top:20px;
+text-decoration:none;
+color:#176b2d;
+font-weight:bold;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<div class="login-card">
+<div class="edit-card">
 
 <h2>تعديل الملف الشخصي</h2>
 
-<input id="newName" type="text" placeholder="الاسم الجديد">
+<div class="avatar-box">
+<img src="profile.png" id="preview">
+<br><br>
+<input type="file" id="imageInput" accept="image/*">
+</div>
 
-<input id="newPhoto" type="text" placeholder="رابط الصورة">
+<label>اسم المستخدم</label>
+<input type="text" id="username" placeholder="اسم المستخدم">
 
-<button id="saveProfile">
-حفظ التعديلات
+<label>البريد الإلكتروني</label>
+<input type="email" id="email" readonly>
+
+<button class="save-btn">
+<i class="fas fa-floppy-disk"></i>
+حفظ التغييرات
 </button>
+
+<a href="account.html" class="back-btn">
+العودة للحساب
+</a>
 
 </div>
 
-<script type="module" src="edit-profile.js"></script>
+<script>
+
+const imageInput=document.getElementById("imageInput");
+const preview=document.getElementById("preview");
+
+imageInput.onchange=function(){
+
+const file=this.files[0];
+
+if(file){
+preview.src=URL.createObjectURL(file);
+}
+
+}
+
+</script>
 
 </body>
+
 </html>
