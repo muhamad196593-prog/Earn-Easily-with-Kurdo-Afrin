@@ -118,22 +118,19 @@ font-weight:bold;
 </div>
 
 <script>
+const imageInput = document.getElementById("imageInput");
+const preview = document.getElementById("preview");
 
-const imageInput=document.getElementById("imageInput");
-const preview=document.getElementById("preview");
+imageInput.onchange = function () {
+    const file = this.files[0];
 
-imageInput.onchange=function(){
-
-const file=this.files[0];
-
-if(file){
-preview.src=URL.createObjectURL(file);
-}
-
-}
-
+    if (file) {
+        preview.src = URL.createObjectURL(file);
+    }
+};
 </script>
 
-</body>
+<script type="module" src="edit-profile.js"></script>
 
+</body>
 </html>
