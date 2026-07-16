@@ -10,72 +10,72 @@ import {
   setDoc
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
-const username = document.getElementById("username");
-const email = document.getElementById("email");
-const saveBtn = document.querySelector(".save-btn");
+window.addEventListener("DOMContentLoaded", () => {
 
-let currentUser = null;
+  const username = document.getElementById("username");
+  const email = document.getElementById("email");
+  const saveBtn = document.querySelector(".save-btn");
 
-onAuthStateChanged(auth, (user) => {
-
-  if (!user) {
-    alert("يرجى تسجيل الدخول أولاً");
-    window.location.href = "index.html";
+  if (!username || !email || !saveBtn) {
+    alert("خطأ: لم يتم العثور على عناصر الصفحة");
     return;
   }
 
-  currentUser = user;
+  let currentUser = null;
 
-  username.value = user.displayName || "";
-  email.value = user.email || "";
+  onAuthStateChanged(auth, (user) => {
 
-});
+    if (!user) {
+      alert("يرجى تسجيل الدخول أولاً");
+      window.location.href = "index.html";
+      return;
+    }
 
-saveBtn.addEventListener("click", async () => {
+    currentUser = user;
 
-  if (!currentUser) {
-    alert("لم يتم تحميل بيانات المستخدم");
-    return;
-  }
+    username.value = user.displayName || "";
+    email.value = user.email || "";
+  });
 
-  const newName = username.value.trim();
+  saveBtn.onclick = async function () {
 
-  if (newName === "") {
-    alert("يرجى إدخال اسم المستخدم");
-    return;
-  }
+    if (!currentUser) {
+      alert("لم يتم تحميل بيانات المستخدم");
+      return;
+    }
 
-  try {
+    try {
 
-    // تحديث الاسم في Firebase Authentication
-    await updateProfile(currentUser, {
-      displayName: newName
-    });
+      const newName = username.value.trim();
 
-    // حفظ البيانات في Firestore
-    await setDoc(
-      doc(db, "users", currentUser.uid),
-      {
-        username: newName,
-        email: currentUser.email
-      },
-      { merge: true }
-    );
+      await updateProfile(currentUser, {
+        displayName: newName
+      });
 
-    alert("✅ تم حفظ التعديلات بنجاح");
+      await setDoc(
+        doc(db, "users", currentUser.uid),
+        {
+          username: newName,
+          email: currentUser.email
+        },
+        { merge: true }
+      );
 
-    window.location.href = "account.html";
+      alert("تم حفظ التعديلات بنجاح");
 
-  } catch (error) {
+      window.location.href = "account.html";
 
-    console.error(error);
+    } catch (error) {
 
-    alert(
-      "حدث خطأ أثناء الحفظ\n\n" +
-      "Code: " + error.code + "\n\n" +
-      "Message: " + error.message
-    );
+      console.error(error);
 
-  }
+      alert(
+        "Code: " + error.code + "\n\n" +
+        error.message
+      );
+
+    }
+
+  };
 
 });
