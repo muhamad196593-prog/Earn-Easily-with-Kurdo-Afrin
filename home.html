@@ -18,7 +18,7 @@
 
     <i class="fas fa-bell"></i>
 
-    <h1 style="color:#000;">الرئيسية</h1>
+    <h1 style="color:#000;" data-lang="home">الرئيسية</h1>
 
     <i class="fas fa-bars" style="color:#000;"></i>
 
@@ -28,13 +28,13 @@
 
     <div class="balance-text">
 
-        <p>الرصيد الحالي</p>
+        <p data-lang="currentBalance">الرصيد الحالي</p>
 
         <h2 id="balance">0 نقطة</h2>
 
         <button>
             <i class="fas fa-wallet"></i>
-            عرض المحفظة
+            <span data-lang="showWallet">عرض المحفظة</span>
         </button>
 
     </div>
@@ -45,11 +45,11 @@
 
 <section class="offers-section">
 
-    <h2>شركات العروض</h2>
+    <h2 data-lang="offerCompanies">شركات العروض</h2>
 
     <a href="games.html" class="offer-card">
         <i class="fas fa-gamepad"></i>
-        <span>🎮 الألعاب</span>
+        <span data-lang="games">🎮 الألعاب</span>
     </a>
 
 </section>
@@ -58,27 +58,28 @@
 
     <a href="home.html" class="active">
         <i class="fas fa-house"></i>
-        <span>الرئيسية</span>
+        <span data-lang="home">الرئيسية</span>
     </a>
 
     <a href="earn.html">
         <i class="fas fa-chart-line"></i>
-        <span>الأرباح</span>
+        <span data-lang="earnings">الأرباح</span>
     </a>
 
     <a href="withdraw.html">
         <i class="fas fa-wallet"></i>
-        <span>السحب</span>
+        <span data-lang="withdraw">السحب</span>
     </a>
 
     <a href="account.html">
         <i class="fas fa-user"></i>
-        <span>الحساب</span>
+        <span data-lang="account">الحساب</span>
     </a>
 
 </nav>
 
 <script type="module" src="home.js"></script>
+<script src="language.js"></script>
 
 </body>
 </html>
