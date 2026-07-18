@@ -8,7 +8,6 @@ import {
   collection,
   query,
   where,
-  orderBy,
   onSnapshot,
   updateDoc,
   doc
@@ -25,8 +24,7 @@ onAuthStateChanged(auth, (user) => {
 
   const q = query(
     collection(db, "notifications"),
-    where("uid", "==", user.uid),
-    orderBy("createdAt", "desc")
+    where("uid", "==", user.uid)
   );
 
   onSnapshot(q, async (snapshot) => {
@@ -34,16 +32,14 @@ onAuthStateChanged(auth, (user) => {
     list.innerHTML = "";
 
     if (snapshot.empty) {
-
       list.innerHTML = `
-      <div class="notification">
-        <div class="content">
-          <h3>لا توجد إشعارات</h3>
-          <p>ستظهر هنا جميع إشعاراتك.</p>
+        <div class="notification">
+          <div class="content">
+            <h3>لا توجد إشعارات</h3>
+            <p>ستظهر هنا جميع إشعاراتك.</p>
+          </div>
         </div>
-      </div>
       `;
-
       return;
     }
 
@@ -52,14 +48,13 @@ onAuthStateChanged(auth, (user) => {
       const data = item.data();
 
       list.innerHTML += `
-      <div class="notification ${data.read ? "" : "unread"}">
+        <div class="notification ${data.read ? "" : "unread"}">
           <i class="fa-solid fa-bell icon"></i>
-
           <div class="content">
-              <h3>${data.title}</h3>
-              <p>${data.message}</p>
+            <h3>${data.title}</h3>
+            <p>${data.message}</p>
           </div>
-      </div>
+        </div>
       `;
 
       if (!data.read) {
