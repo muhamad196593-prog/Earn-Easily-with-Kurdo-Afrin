@@ -374,3 +374,38 @@ font-size:14px;
 .offer-card:hover{
 background:#f4fff7;
 }
+/* ===== زر الإشعارات ===== */
+
+.notification-btn{
+    color:#000;
+    text-decoration:none;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:40px;
+    height:40px;
+    font-size:22px;
+}
+
+.notification-btn:hover{
+    color:#0b7a43;
+}
+
+/* شارة الإشعارات */
+.notification-badge{
+    position:absolute;
+    top:-4px;
+    left:-4px;
+    min-width:18px;
+    height:18px;
+    background:#e53935;
+    color:#fff;
+    border-radius:50%;
+    font-size:11px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:2px solid #fff;
+}
