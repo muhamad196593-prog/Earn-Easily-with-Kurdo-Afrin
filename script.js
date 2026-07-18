@@ -1,4 +1,4 @@
-import { auth } from "./firebase.js";
+import { auth, db } from "./firebase.js";
 
 import {
   getRedirectResult,
@@ -6,9 +6,14 @@ import {
   createUserWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
+import {
+  collection,
+  addDoc,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
 document.addEventListener("DOMContentLoaded", async () => {
 
-    // اختبار أن الملف يعمل
     console.log("script.js loaded");
 
     // استكمال تسجيل الدخول بعد الرجوع من Google
@@ -64,9 +69,24 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
 
             try {
-                await createUserWithEmailAndPassword(auth, email, password);
+
+                const userCredential = await createUserWithEmailAndPassword(
+                    auth,
+                    email,
+                    password
+                );
+
+                await addDoc(collection(db, "notifications"), {
+                    uid: userCredential.user.uid,
+                    title: "🎉 مرحبًا بك",
+                    message: "أهلاً بك في Kurdo Rewards، نتمنى لك تجربة ممتعة.",
+                    read: false,
+                    createdAt: serverTimestamp()
+                });
+
                 alert("تم إنشاء الحساب بنجاح");
                 window.location.href = "home.html";
+
             } catch (error) {
                 alert(error.message);
             }
@@ -76,11 +96,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // إظهار نموذج تسجيل الدخول
     window.showLogin = function () {
+
         const loginCard = document.querySelector(".login-card");
         const registerForm = document.getElementById("registerForm");
 
         if (registerForm) registerForm.style.display = "none";
         if (loginCard) loginCard.style.display = "block";
+
     };
 
 });
