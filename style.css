@@ -1,167 +1,167 @@
 *{
 margin:0;
-padding:0;
+الحشو: 0؛
 box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
 
-body{
-background:#f5f5f5;
-direction:rtl;
+جسم{
+الخلفية: #f5f5f5؛
+الاتجاه: من اليمين إلى اليسار؛
 overflow-x:hidden;
 }
 
 .top-bg{
-height:280px;
-background: url("file_000000007a0c71f49d56e0565c0bba69.png") center center;
-background-size: cover;
+الارتفاع: 280 بكسل؛
+الخلفية: url("file_000000007a0c71f49d56e0565c0bba69.png") center center;
+حجم الخلفية: تغطية؛
 background-repeat: no-repeat;
 border-bottom-left-radius:40px;
 border-bottom-right-radius:40px;
 display:flex;
 justify-content:center;
 align-items:center;
-position:relative;
+الموضع: نسبي؛
 }
 
 .overlay{
-position:absolute;
+الموضع: مطلق؛
 inset:0;
-background:rgba(0,0,0,.08);
+الخلفية: rgba(0,0,0,.08)؛
 border-bottom-left-radius:40px;
 border-bottom-right-radius:40px;
 }
 
 .logo{
-position:relative;
+الموضع: نسبي؛
 text-align:center;
-color:#fff;
+اللون:#fff;
 z-index:2;
 }
 
 .logo h1{
-font-size:38px;
-font-weight:bold;
+حجم الخط: 38 بكسل؛
+وزن الخط: عريض؛
 }
 
 .logo p{
 margin-top:10px;
-font-size:20px;
+حجم الخط: 20 بكسل؛
 }
 
 .login-card{
-width:92%;
-max-width:430px;
-background:#fff;
+العرض: 92%؛
+الحد الأقصى للعرض: 430 بكسل؛
+الخلفية:#fff;
 margin:-60px auto 30px;
 border-radius:30px;
-padding:30px;
+الحشو: 30 بكسل؛
 box-shadow:0 15px 40px rgba(0,0,0,.15);
-position:relative;
-z-index:5;
+الموضع: نسبي؛
+مؤشر z: 5؛
 }
 
 .login-card h2{
 text-align:center;
-color:#1f7d42;
-font-size:32px;
+اللون: #1f7d42؛
+حجم الخط: 32 بكسل؛
 margin-bottom:10px;
 }
 
 .sub{
 text-align:center;
-color:#666;
+اللون: #666؛
 margin-bottom:25px;
-line-height:1.7;
+ارتفاع السطر: 1.7؛
 }
 .input-box{
-width:100%;
-height:58px;
-background:#f8f8f8;
+العرض: 100%؛
+الارتفاع: 58 بكسل؛
+الخلفية:#f8f8f8;
 border:2px solid #e5e5e5;
 border-radius:15px;
 display:flex;
 align-items:center;
-padding:0 18px;
+الحشو: 0 18 بكسل؛
 margin-bottom:18px;
-transition:.3s;
+الانتقال: 0.3 ثانية؛
 }
 
 .input-box:focus-within{
-border-color:#1f7d42;
+لون الحدود: #1f7d42؛
 box-shadow:0 0 10px rgba(31,125,66,.2);
 }
 
 .input-box i{
-color:#1f7d42;
-font-size:22px;
+اللون: #1f7d42؛
+حجم الخط: 22 بكسل؛
 margin-left:12px;
 }
 
 .input-box input{
-width:100%;
+العرض: 100%؛
 border:none;
-background:transparent;
-outline:none;
-font-size:18px;
-color:#333;
+الخلفية: شفافة؛
+مخطط تفصيلي: لا شيء؛
+حجم الخط: 18 بكسل؛
+اللون: #333؛
 }
 
-.options{
+.خيارات{
 display:flex;
 justify-content:space-between;
 align-items:center;
 margin:15px 0 25px;
-font-size:15px;
+حجم الخط: 15 بكسل؛
 }
 
 .options a{
 text-decoration:none;
-color:#1f7d42;
-font-weight:bold;
+اللون: #1f7d42؛
+وزن الخط: عريض؛
 }
 
 .login-btn{
-width:100%;
-height:58px;
-background:#1f7d42;
+العرض: 100%؛
+الارتفاع: 58 بكسل؛
+الخلفية: #1f7d42؛
 border:none;
 border-radius:15px;
-color:#fff;
-font-size:22px;
-font-weight:bold;
-cursor:pointer;
-transition:.3s;
+اللون:#fff;
+حجم الخط: 22 بكسل؛
+وزن الخط: عريض؛
+المؤشر: مؤشر؛
+الانتقال: 0.3 ثانية؛
 margin-bottom:15px;
 }
 
 .login-btn:hover{
-background:#166534;
+الخلفية: #166534؛
 }
 
 .register-btn{
-width:100%;
-height:58px;
-background:#fff;
+العرض: 100%؛
+الارتفاع: 58 بكسل؛
+الخلفية:#fff;
 border:2px solid #d4af37;
 border-radius:15px;
-color:#b48b1f;
-font-size:20px;
-font-weight:bold;
-cursor:pointer;
-transition:.3s;
+اللون: #b48b1f؛
+حجم الخط: 20 بكسل؛
+وزن الخط: عريض؛
+المؤشر: مؤشر؛
+الانتقال: 0.3 ثانية؛
 }
 
 .register-btn:hover{
-background:#d4af37;
-color:#fff;
+الخلفية: #d4af37؛
+اللون:#fff;
 }
 .logo-circle{
-width:95px;
-height:95px;
+العرض: 95 بكسل؛
+الارتفاع: 95 بكسل؛
 margin:0 auto 20px;
 border-radius:50%;
-background:linear-gradient(135deg,#1f7d42,#2fa85d);
+الخلفية: تدرج خطي (135 درجة، #1f7d42، #2fa85d)؛
 display:flex;
 justify-content:center;
 align-items:center;
@@ -170,8 +170,8 @@ border:5px solid rgba(255,255,255,.4);
 }
 
 .logo-circle i{
-font-size:42px;
-color:#ffd54f;
+حجم الخط: 42 بكسل؛
+اللون: #ffd54f؛
 }
 
 .logo h1{
@@ -184,42 +184,42 @@ animation:fadeUp .7s ease;
 
 @keyframes fadeUp{
 
-from{
-opacity:0;
+من{
+الشفافية: 0؛
 transform:translateY(40px);
 }
 
-to{
-opacity:1;
+ل{
+الشفافية: 1؛
 transform:translateY(0);
 }
 
 }
 .toggle-password{
-cursor:pointer;
-color:#888;
-font-size:20px;
+المؤشر: مؤشر؛
+اللون: #888؛
+حجم الخط: 20 بكسل؛
 margin-right:10px;
-transition:.3s;
+الانتقال: 0.3 ثانية؛
 }
 
 .toggle-password:hover{
-color:#1f7d42;
+اللون: #1f7d42؛
 }
-.features{
+.سمات{
 margin-top:30px;
 display:flex;
 justify-content:space-between;
-gap:10px;
+الفجوة: 10 بكسل؛
 }
 
-.feature{
+.ميزة{
 flex:1;
-background:#f8f8f8;
+الخلفية:#f8f8f8;
 border-radius:15px;
-padding:15px 10px;
+الحشو: 15 بكسل 10 بكسل؛
 text-align:center;
-transition:.3s;
+الانتقال: 0.3 ثانية؛
 }
 
 .feature:hover{
@@ -228,98 +228,97 @@ box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
 
 .feature i{
-font-size:26px;
-color:#d4af37;
+حجم الخط: 26 بكسل؛
+اللون: #d4af37؛
 margin-bottom:8px;
 display:block;
 }
 
 .feature span{
-font-size:14px;
-font-weight:bold;
-color:#1f7d42;
+حجم الخط: 14 بكسل؛
+وزن الخط: عريض؛
+اللون: #1f7d42؛
 }
 .stats{
-    width:90%;
+    العرض: 90%؛
     margin:20px auto;
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:15px;
+    الفجوة: 15 بكسل؛
 }
 
-.card{
-    background:white;
+.بطاقة{
+    الخلفية: بيضاء؛
     border-radius:20px;
-    padding:20px;
+    الحشو: 20 بكسل؛
     text-align:center;
 }
 
 .card i{
-    font-size:35px;
-    color:#d4af37;
+    حجم الخط: 35 بكسل؛
+    اللون: #d4af37؛
     margin-bottom:10px;
 }
 
 .card h3{
     margin:10px 0;
-    color:#0b5d33;
-
-    .logo-img{
-    width:80px;
-    height:80px;
-    object-fit:contain;
-    border-radius:50%;
-    }
+    اللون: #0b5d33؛
+}
+.logo-img {
+    العرض: 80 بكسل؛
+    الارتفاع: 80 بكسل؛
+    object-fit: contain;
+    border-radius: 50%;
 }
 .card p{
     margin:0;
-    color:#555;
+    اللون: #555؛
 }
-.menu{
-    width:90%;
+.قائمة طعام{
+    العرض: 90%؛
     margin:20px auto;
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:15px;
+    الفجوة: 15 بكسل؛
 }
 
 .menu-item{
-    background:#0f6b3a;
-    color:white;
+    الخلفية: #0f6b3a؛
+    اللون: أبيض؛
     border-radius:20px;
-    padding:25px;
+    الحشو: 25 بكسل؛
     text-align:center;
-    cursor:pointer;
+    المؤشر: مؤشر؛
 }
 
 .menu-item i{
-    font-size:40px;
-    color:#f3c63f;
+    حجم الخط: 40 بكسل؛
+    اللون: #f3c63f؛
     margin-bottom:10px;
 }
 
 .menu-item p{
     margin:0;
-    font-size:20px;
+    حجم الخط: 20 بكسل؛
 }
 .tasks-header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:18px 20px;
-    background:#fff;
-    position:sticky;
-    top:0;
+    الحشو: 18 بكسل 20 بكسل؛
+    الخلفية:#fff;
+    الموضع: ثابت؛
+    أعلى: 0؛
     z-index:100;
 }
 .tasks-card{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:22px 25px;
-    background:#ffffff;
-    position:sticky;
-    top:0;
+    الحشو: 22 بكسل 25 بكسل؛
+    الخلفية:#ffffff;
+    الموضع: ثابت؛
+    أعلى: 0؛
     z-index:100;
 
     border-bottom-left-radius:35px;
@@ -329,77 +328,77 @@ color:#1f7d42;
 }
 
 .wallet-circle{
-    position:absolute;
-    left:20px;
-    top:20px;
-    width:90px;
-    height:90px;
+    الموضع: مطلق؛
+    اليسار: 20 بكسل؛
+    أعلى: 20 بكسل؛
+    العرض: 90 بكسل؛
+    الارتفاع: 90 بكسل؛
     border-radius:50%;
-    background:#ffc62b;
+    الخلفية: #ffc62b؛
     display:flex;
     justify-content:center;
     align-items:center;
-    font-size:42px;
-    color:#11853e;
+    حجم الخط: 42 بكسل؛
+    اللون: #11853e؛
 }
 
 .stats-row{
     display:flex;
     justify-content:space-between;
-    gap:15px;
+    الفجوة: 15 بكسل؛
 }
 
 .stat h2{
-    font-size:48px;
+    حجم الخط: 48 بكسل؛
     margin:8px 0;
-    font-weight:bold;
+    وزن الخط: عريض؛
 }
 
 .stat h3{
     margin:0;
-    font-size:22px;
+    حجم الخط: 22 بكسل؛
 }
 
 .stat h4{
-    color:#ffc62b;
-    font-size:36px;
+    اللون: #ffc62b؛
+    حجم الخط: 36 بكسل؛
     margin-top:8px;
 }
 
 .progress-text{
     margin-top:25px;
     text-align:center;
-    font-size:18px;
+    حجم الخط: 18 بكسل؛
 }
 
 .progress-bar{
-    height:18px;
-    background:rgba(255,255,255,.25);
+    الارتفاع: 18 بكسل؛
+    الخلفية: rgba(255,255,255,.25)؛
     border-radius:20px;
     overflow:hidden;
     margin-top:15px;
 }
 
 .progress-fill{
-    width:79%;
-    height:100%;
-    background:#ffc62b;
+    العرض: 79%؛
+    الارتفاع: 100%؛
+    الخلفية: #ffc62b؛
     border-radius:20px;
 }
 
 .progress-number{
     text-align:center;
     margin-top:12px;
-    font-size:22px;
-    font-weight:bold;
+    حجم الخط: 22 بكسل؛
+    وزن الخط: عريض؛
 }
-.special-tasks{
+.مهام-خاصة{
     margin:20px;
 }
 
 .special-tasks h2{
-    color:#11853e;
-    font-size:28px;
+    اللون: #11853e؛
+    حجم الخط: 28 بكسل؛
     margin-bottom:15px;
 }
 
@@ -407,9 +406,9 @@ color:#1f7d42;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:#fff;
+    الخلفية:#fff;
     border-radius:20px;
-    padding:16px;
+    الحشو: 16 بكسل؛
     margin-bottom:15px;
     box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
@@ -417,61 +416,61 @@ color:#1f7d42;
 .task-info{
     display:flex;
     align-items:center;
-    gap:15px;
+    الفجوة: 15 بكسل؛
 }
 
 .task-icon{
-    font-size:34px;
-    color:#11853e;
+    حجم الخط: 34 بكسل؛
+    اللون: #11853e؛
 }
 
 .task-info h3{
     margin:0;
-    font-size:18px;
+    حجم الخط: 18 بكسل؛
 }
 
 .task-info p{
     margin:5px 0 0;
-    color:#666;
+    اللون: #666؛
 }
 
 .task-btn{
-    background:#11853e;
-    color:#fff;
+    الخلفية: #11853e؛
+    اللون:#fff;
     border:none;
     border-radius:12px;
-    padding:10px 22px;
-    font-size:16px;
-    cursor:pointer;
+    الحشو: 10 بكسل 22 بكسل؛
+    حجم الخط: 16 بكسل؛
+    المؤشر: مؤشر؛
 }
 .summary-cards{
     display:flex;
-    gap:15px;
+    الفجوة: 15 بكسل؛
     margin:20px;
 }
 
 .summary-card{
     flex:1;
-    background:#fff;
+    الخلفية:#fff;
     border-radius:20px;
-    padding:20px;
+    الحشو: 20 بكسل؛
     text-align:center;
     box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
 .summary-card i{
-    font-size:36px;
-    color:#11853e;
+    حجم الخط: 36 بكسل؛
+    اللون: #11853e؛
     margin-bottom:10px;
 }
 
 .summary-card h3{
-    font-size:16px;
+    حجم الخط: 16 بكسل؛
     margin:10px 0;
 }
 
 .summary-card span{
-    font-size:24px;
-    font-weight:bold;
-    color:#11853e;
+    حجم الخط: 24 بكسل؛
+    وزن الخط: عريض؛
+    اللون: #11853e؛
 }
