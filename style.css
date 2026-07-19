@@ -263,12 +263,13 @@ color:#1f7d42;
 .card h3{
     margin:10px 0;
     color:#0b5d33;
-}
-.logo-img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    border-radius: 50%;
+.logo-img{
+    width:95px;
+    height:95px;
+    object-fit:contain;
+    border-radius:50%;
+    display:block;
+    margin:0 auto;
 }
 .card p{
     margin:0;
