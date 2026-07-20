@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>KiwiWall</title>
 
 <style>
-body{
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
     background:#f5f5f5;
     font-family:Cairo,sans-serif;
 }
@@ -20,11 +27,35 @@ iframe{
 </style>
 
 </head>
+
 <body>
 
-<iframe
-src="https://offers.kiwiwall.com/wall/plc_uv0yytov?user_id=testuser">
-</iframe>
+<iframe id="offerwall"></iframe>
+
+<script type="module">
+
+import { auth } from "./firebase.js";
+
+import {
+onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+
+onAuthStateChanged(auth,(user)=>{
+
+    if(user){
+
+        document.getElementById("offerwall").src =
+        `https://offers.kiwiwall.com/wall/plc_uv0yytov?user_id=${user.uid}`;
+
+    }else{
+
+        window.location.href="index.html";
+
+    }
+
+});
+
+</script>
 
 </body>
 </html>
